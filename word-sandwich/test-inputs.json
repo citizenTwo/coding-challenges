@@ -1,0 +1,40 @@
+{
+    "testCases": [
+        {
+            "str1": "abc",
+            "str2": "def",
+            "result": "adbecf",
+            "expected": true
+        },
+        {
+            "str1": "code",
+            "str2": "lap",
+            "result": "coldape",
+            "expected": false
+        },
+        {
+            "str1": "hi",
+            "str2": "programming",
+            "result": "hpriogramming",
+            "expected": true
+        },
+        {
+            "str1": "",
+            "str2": "python",
+            "result": "python",
+            "expected": true
+        },
+        {
+            "str1": "aaa",
+            "str2": "zzzzzzzzz",
+            "result": "azzazzazzaz",
+            "expected": true
+        },
+        {
+            "str1": "x",
+            "str2": "abcd",
+            "result": "abcxd",
+            "expected": false
+        }
+    ]
+}

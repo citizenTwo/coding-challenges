@@ -1,0 +1,117 @@
+{
+    "test1": {
+
+        "input": {
+            "securityDeposit": 1000,
+            "invoices": [
+                { "id": 1, "amount": 300, "status": "Pending" },
+                { "id": 2, "amount": 400, "status": "Pending" }
+            ]
+        },
+        "expected": {
+            "processedInvoices": [
+                { "id": 1, "amount": 300, "status": "Adjusted" },
+                { "id": 2, "amount": 400, "status": "Adjusted" }
+            ],
+            "remainingDeposit": 300
+        }
+    },
+    "test2": { 
+        "input": {
+            "securityDeposit": 500,
+            "invoices": [
+                { "id": 1, "amount": 300, "status": "Pending" },
+                { "id": 2, "amount": 400, "status": "Pending" }
+            ]
+        },
+        "expected": {
+            "processedInvoices": [
+                { "id": 1, "amount": 300, "status": "Adjusted" },
+                { "id": 2, "amount": 200, "status": "Adjusted" },
+                { "id": 3, "amount": 200, "status": "Void" }
+            ],
+            "remainingDeposit": 0
+        }
+    },
+    "test3": {
+
+        "input": {
+            "securityDeposit": 0,
+            "invoices": [
+                { "id": 1, "amount": 300, "status": "Pending" }
+            ]
+        },
+        "expected": {
+            "processedInvoices": [
+                { "id": 1, "amount": 300, "status": "Void" }
+            ],
+            "remainingDeposit": 0
+        }
+    },
+    "test4": {
+
+        "input": {
+            "securityDeposit": 600,
+            "invoices": [
+                { "id": 1, "amount": 300, "status": "Pending" },
+                { "id": 2, "amount": 200, "status": "Pending" },
+                { "id": 3, "amount": 400, "status": "Pending" }
+            ]
+        },
+        "expected": {
+            "processedInvoices": [
+                { "id": 1, "amount": 300, "status": "Adjusted" },
+                { "id": 2, "amount": 200, "status": "Adjusted" },
+                { "id": 3, "amount": 400, "status": "Void" }
+            ],
+            "remainingDeposit": 100
+        }
+    },
+    "test5": {
+
+        "input": {
+            "securityDeposit": 1000,
+            "invoices": []
+        },
+        "expected": {
+            "processedInvoices": [],
+            "remainingDeposit": 1000
+        }
+    },
+    "test6": {
+
+        "input": {
+            "securityDeposit": 100.1,
+            "invoices": [
+                { "id": 1, "amount": 33.37, "status": "Pending" },
+                { "id": 2, "amount": 33.37, "status": "Pending" },
+                { "id": 3, "amount": 33.37, "status": "Pending" }
+            ]
+        },
+        "expected": {
+            "processedInvoices": [
+                { "id": 1, "amount": 33.37, "status": "Adjusted" },
+                { "id": 2, "amount": 33.37, "status": "Adjusted" },
+                { "id": 3, "amount": 33.37, "status": "Adjusted" }
+            ],
+            "remainingDeposit": -0.01
+        }
+    },
+    "test7": {
+
+        "input": {
+            "securityDeposit": 0.3,
+            "invoices": [
+                { "id": 1, "amount": 0.1, "status": "Pending" },
+                { "id": 2, "amount": 0.2, "status": "Pending" }
+            ]
+        },
+        "expected": {
+            "processedInvoices": [
+                { "id": 1, "amount": 0.1, "status": "Adjusted" },
+                { "id": 2, "amount": 0.2, "status": "Adjusted" }
+            ],
+            "remainingDeposit": 0
+        }
+    }
+}

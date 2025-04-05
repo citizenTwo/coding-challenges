@@ -1,0 +1,144 @@
+{
+    "testCases": [
+        {
+            "input": ["eat", "tea", "tan", "ate", "nat", "bat"],
+            "expected": 3,
+            "description": "Basic case with multiple groups"
+        },
+        {
+            "input": [""],
+            "expected": 1,
+            "description": "Empty string case"
+        },
+        {
+            "input": ["listen", "silent", "inlets"],
+            "expected": 1,
+            "description": "All words are anagrams"
+        },
+        {
+            "input": ["hello", "world"],
+            "expected": 2,
+            "description": "No anagrams"
+        },
+        {
+            "input": ["cat", "cat", "cat"],
+            "expected": 1,
+            "description": "Duplicate words"
+        },
+        {
+            "input": ["rat", "tar", "art", "star", "tars", "start"],
+            "expected": 3,
+            "description": "Complex case with different length words"
+        },
+        {
+            "input": ["a", "b", "c", "d"],
+            "expected": 4,
+            "description": "Single character words"
+        },
+        {
+            "input": ["race", "care", "acre", "Race"],
+            "expected": 2,
+            "description": "Case sensitivity check"
+        },
+        {
+            "input": ["documentation", "countamindoe", "denomination", "contaminated"],
+            "expected": 1,
+            "description": "Long word anagrams"
+        },
+        {
+            "input": ["debit card", "bad credit", "credit bad", "debit card"],
+            "expected": 2,
+            "description": "Phrases with spaces"
+        },
+        {
+            "input": ["players", "parsley", "sparely", "replays", "slayer", "replay"],
+            "expected": 1,
+            "description": "Large anagram group"
+        },
+        {
+            "input": ["stop", "tops", "spot", "stops", "pots", "post"],
+            "expected": 2,
+            "description": "Similar words with different lengths"
+        },
+        {
+            "input": ["state", "taste", "stats", "tasts"],
+            "expected": 2,
+            "description": "Almost anagrams but not quite"
+        },
+        {
+            "input": ["aaaaaa", "aaaaaa", "baaaaa", "aaaaab"],
+            "expected": 3,
+            "description": "Words with repeated characters"
+        },
+        {
+            "input": ["algorithm", "logarithm", "logarithms", "algorithms"],
+            "expected": 2,
+            "description": "Words with singular/plural forms"
+        },
+        {
+            "input": ["stressed", "desserts", "stress", "dress"],
+            "expected": 3,
+            "description": "Substrings and superstrings"
+        },
+        {
+            "input": ["thread", "threads", "threaded", "threading"],
+            "expected": 4,
+            "description": "Progressive word building"
+        },
+        {
+            "input": ["cat", "cats", "scatter", "cast"],
+            "expected": 2,
+            "description": "Mixed substrings with valid anagrams"
+        },
+        {
+            "input": ["part", "trap", "party", "trapy"],
+            "expected": 2,
+            "description": "Base words with extensions"
+        },
+        {
+            "input": ["stop", "stops", "post", "posts", "tops", "spot"],
+            "expected": 3,
+            "description": "Multiple related length groups"
+        },
+        {
+            "input": ["read", "reader", "readers", "reading", "reads"],
+            "expected": 5,
+            "description": "Word family with different suffixes"
+        },
+        {
+            "input": ["play", "player", "played", "replay", "playing"],
+            "expected": 5,
+            "description": "Words with prefixes and suffixes"
+        },
+        {
+            "input": ["tea", "team", "steam", "master", "stream"],
+            "expected": 3,
+            "description": "Progressive anagrams with additions"
+        },
+        {
+            "input": ["am", "ham", "sham", "shame", "shamed"],
+            "expected": 5,
+            "description": "Sequential character additions"
+        },
+        {
+            "input": ["a b", "b a", "ab ", " ab"],
+            "expected": 3,
+            "description": "Different space positions make different groups"
+        },
+        {
+            "input": ["he!!o", "!he!o", "o!!he"],
+            "expected": 1,
+            "description": "Special characters are part of anagram comparison"
+        },
+        {
+            "input": ["##test", "test##", "te##st"],
+            "expected": 2,
+            "description": "Special characters in different positions"
+        },
+        {
+            "input": ["cat!", "!cat", "cat", "tac"],
+            "expected": 3,
+            "description": "Mix of special characters and regular words"
+        }
+    ]
+}
