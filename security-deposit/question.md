@@ -14,7 +14,6 @@ Create a function that processes a list of pending invoices against a security d
 ## Interface Definitions
 ```typescript
 interface Invoice {
-    id: number;
     amount: number; 
     status: 'Pending' |  'Adjusted' | 'Uncollectable';
 }
