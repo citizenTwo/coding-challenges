@@ -28,23 +28,15 @@ interface AdjustmentResult {
 ## Example
 ```typescript
 const result = processSecurityDeposit(1000, [
-    { id: 1, amount: 300,  status: 'Pending' },
-    { id: 2, amount: 400,  status: 'Pending' }
+    { amount: 300,  status: 'Pending' },
+    { amount: 400,  status: 'Pending' }
 ]);
 
 // Result will be:
 {
     processedInvoices: [
-        {
-            id: 1, 
-            amount: 300, 
-            status: 'Adjusted'
-        },
-        {
-            id: 2, 
-            amount: 400, 
-            status: 'Adjusted'
-        }
+        { amount: 300, status: 'Adjusted' },
+        { amount: 400, status: 'Adjusted' }
     ],
     remainingDeposit: 300
 }
@@ -54,34 +46,18 @@ const result = processSecurityDeposit(1000, [
 ## Example
 ```typescript
 const result = processSecurityDeposit(1000, [
-    { id: 1, amount: 400,  status: 'Pending' },
-    { id: 2, amount: 400,  status: 'Pending' },
-    { id: 3, amount: 400,  status: 'Pending' }
+    { amount: 400,  status: 'Pending' },
+    { amount: 400,  status: 'Pending' },
+    { amount: 400,  status: 'Pending' }
 ]);
 
 // Result will be:
 {
     processedInvoices: [
-        {
-            id: 1, 
-            amount: 400,
-            status: 'Adjusted'
-        },
-        {
-            id: 2, 
-            amount: 400, 
-            status: 'Adjusted'
-        },
-        {
-            id: 3, 
-            amount: 200, 
-            status: 'Adjusted'
-        },
-        {
-            id: 4, 
-            amount: 200, 
-            status: 'Uncollectable'
-        }
+        { amount: 400, status: 'Adjusted' },
+        { amount: 400, status: 'Adjusted' },
+        { amount: 200, status: 'Adjusted' },
+        { amount: 200, status: 'Uncollectable'}
     ],
     remainingDeposit: 0
 }
