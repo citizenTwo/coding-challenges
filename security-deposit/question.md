@@ -61,3 +61,27 @@ const result = processSecurityDeposit(1000, [
     remainingDeposit: 0
 }
 ```
+
+
+
+## Example
+```typescript
+const result = processSecurityDeposit(1000, [
+    { amount: 400,  status: 'Pending' },
+    { amount: 400,  status: 'Pending' },
+    { amount: 400,  status: 'Pending' },
+    { amount: 400,  status: 'Pending' },
+]);
+
+// Result will be:
+{
+    processedInvoices: [
+        { amount: 400, status: 'Adjusted' },
+        { amount: 400, status: 'Adjusted' },
+        { amount: 200, status: 'Adjusted' },
+        { amount: 200, status: 'Uncollectable'}
+        { amount: 400, status: 'Uncollectable'}
+    ],
+    remainingDeposit: 0
+}
+```
