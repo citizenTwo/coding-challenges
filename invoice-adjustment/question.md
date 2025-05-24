@@ -41,22 +41,41 @@ const invoices = [
   { amount: 300, status: "Pending" },
   { amount: 350, status: "Pending" }
 ];
+const result = maximizeAdjustment(400, invoices);
+// Possible valid output (max sum 400):
+// [
+//   { amount: 200, status: "Pending" },
+//   { amount: 250, status: "Pending" },
+//   { amount: 300, status: "Pending" },
+//   { amount: 350, status: "Adjusted" }
+// ]
+
 const result = maximizeAdjustment(500, invoices);
 // Possible valid output (max sum 500):
 // [
 //   { amount: 200, status: "Adjusted" },
-//   { amount: 250, status: "Adjusted" },
-//   { amount: 300, status: "Pending" },
+//   { amount: 250, status: "Pending" },
+//   { amount: 300, status: "Adjusted" },
 //   { amount: 350, status: "Pending" }
 // ]
-// or
+
+const result = maximizeAdjustment(600, invoices);
+// Possible valid output (max sum 600):
+// [
+//   { amount: 200, status: "Pending" },
+//   { amount: 250, status: "Adjusted" },
+//   { amount: 300, status: "Pending" },
+//   { amount: 350, status: "Adjusted" }
+// ]
+
+const result = maximizeAdjustment(700, invoices);
+// Possible valid output (max sum 700):
 // [
 //   { amount: 200, status: "Pending" },
 //   { amount: 250, status: "Pending" },
 //   { amount: 300, status: "Adjusted" },
 //   { amount: 350, status: "Adjusted" }
 // ]
-// (as long as the sum is maximized and does not exceed 500)
 ```
 
 ## Example 3
