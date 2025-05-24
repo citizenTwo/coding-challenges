@@ -14,7 +14,8 @@ function maximizeAdjustment(securityDeposit: number, invoices: Invoice[]): Invoi
 // Invoice: { amount: number, status: "Pending" | "Adjusted" }
 ```
 
-## Example
+
+## Example 1
 
 ```js
 const invoices = [
@@ -29,6 +30,69 @@ const result = maximizeAdjustment(700, invoices);
 //   { amount: 400, status: "Adjusted" },
 //   { amount: 500, status: "Pending" }
 // ]
+```
+
+## Example 2
+
+```js
+const invoices = [
+  { amount: 200, status: "Pending" },
+  { amount: 250, status: "Pending" },
+  { amount: 300, status: "Pending" },
+  { amount: 350, status: "Pending" }
+];
+const result = maximizeAdjustment(500, invoices);
+// Possible valid output (max sum 500):
+// [
+//   { amount: 200, status: "Adjusted" },
+//   { amount: 250, status: "Adjusted" },
+//   { amount: 300, status: "Pending" },
+//   { amount: 350, status: "Pending" }
+// ]
+// or
+// [
+//   { amount: 200, status: "Pending" },
+//   { amount: 250, status: "Pending" },
+//   { amount: 300, status: "Adjusted" },
+//   { amount: 350, status: "Adjusted" }
+// ]
+// (as long as the sum is maximized and does not exceed 500)
+```
+
+## Example 3
+
+```js
+const invoices = [
+  { amount: 100, status: "Pending" },
+  { amount: 200, status: "Pending" },
+  { amount: 300, status: "Pending" }
+];
+const result = maximizeAdjustment(50, invoices);
+// Output:
+// [
+//   { amount: 100, status: "Pending" },
+//   { amount: 200, status: "Pending" },
+//   { amount: 300, status: "Pending" }
+// ]
+// (no invoice can be adjusted)
+```
+
+## Example 4
+
+```js
+const invoices = [
+  { amount: 100, status: "Pending" },
+  { amount: 200, status: "Pending" },
+  { amount: 300, status: "Pending" }
+];
+const result = maximizeAdjustment(600, invoices);
+// Output:
+// [
+//   { amount: 100, status: "Adjusted" },
+//   { amount: 200, status: "Adjusted" },
+//   { amount: 300, status: "Adjusted" }
+// ]
+// (all invoices can be adjusted)
 ```
 
 **Note:**  
