@@ -113,6 +113,3 @@ const result = maximizeAdjustment(600, invoices);
 // ]
 // (all invoices can be adjusted)
 ```
-
-**Note:**  
-If you mutate the original invoice objects, you may fail hidden tests that check for object identity and reference integrity.
