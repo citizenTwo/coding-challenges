@@ -40,6 +40,3 @@ Explanation: Characters from "hi" are inserted while maintaining the order of "p
 - The length of result string should equal the sum of lengths of str1 and str2
 - Input strings can have drastically different lengths
 - Input strings can be empty
-
-## Follow-up:
-Can you solve it using O(m * n) time and space complexity, where m and n are the lengths of str1 and str2 respectively?
